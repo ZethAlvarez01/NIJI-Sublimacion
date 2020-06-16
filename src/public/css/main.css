@@ -4,10 +4,20 @@
     text-decoration: none;
 }
 
+.clearfix{
+    clear: both;
+    float: none;
+}
+
+.container{
+    width: 85%;
+    margin: 0px auto;   /*Centrar bloque*/ 
+}
+
 html{
     scroll-behavior: smooth;
 }
 
 body{
-    background: red;
+    background: white;
 }
