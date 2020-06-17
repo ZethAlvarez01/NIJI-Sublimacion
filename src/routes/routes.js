@@ -1,9 +1,11 @@
 const { Router } = require('express');
 const router = Router();
 
+const Image = require('../models/Image');
+
 const passport = require('passport');
 
-router.get('/',(req,res) => {
+router.get('/', (req,res) => {
     res.render('index');
 });
 
@@ -58,8 +60,41 @@ router.post('/registro',passport.authenticate('local-registro' ,{
 
 
 //Agregar productos del admin al almacen
-router.get('/almacen',isAuthenticated, (req,res,next) => {
-    res.render('almacen');
+router.get('/almacen',isAuthenticated, async (req,res,next) => {
+
+    const images = await Image.find();
+    res.render('almacen', {
+        images
+    });
+
+});
+
+router.post('/almacen', async (req, res) => {
+    const image = new Image();
+    image.title = req.body.title;
+    image.description = req.body.description;
+    image.filename = req.file.filename;
+    image.path = '/images/uploads/' + req.file.filename;
+    image.originalname = req.file.originalname;
+    image.mimetype = req.file.mimetype;
+    image.size = req.file.size;
+    image.quantity = req.body.quantity;
+    image.price = req.body.price;
+    image.category = req.body.category;
+    image.reference = req.body.reference;
+
+
+    await image.save();
+
+    res.redirect('/almacen');
+});
+
+router.get('/editar/:id',isAuthenticated, async (req, res) => {
+    const { id } = req.params;
+    const image = await Image.findById(id);
+    res.render('editar', {
+        image
+    });
 });
 
 function isAuthenticated(req,res,next){

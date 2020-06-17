@@ -1,3 +1,36 @@
 <%- layout('layouts/main.ejs') %>
 
-<h1>Almacen</h1>
+<form action="/almacen" method="POST" enctype="multipart/form-data">
+
+    <input type="file" name="image"/>
+    <label">Archivo</label>
+    <input type="text" name="title" placeholder="Nombre"/>
+    <input type="number" name="quantity"/>
+    <input type="text" name="category"/>
+    <input type="number" name="price"/>
+    <input type="text" name="reference" placeholder="Referencia"/>
+
+    <textarea name="description" placeholder="Descripcion"></textarea>
+
+    <button type="submit" class="btn btn-success btn-block"> Publicar </button>
+
+</form>
+
+<div>
+    <% images.forEach(function(image) { %>
+
+        <img src="<%= image.path %>" alt="">
+        <h5><%= image.title %></h5>
+        <p><%= image.description %></p>
+        <p><%= format(image.created_at) %></p>
+        <p><%= image.price %></p>
+        <p><%= image.quantity %></p>
+        <p><%= image.reference %></p>
+        <p><%= image.category %></p>
+        <a href="/editar/<%= image._id %>" class="btn btn-primary">
+            Ver perfil
+        </a>
+
+<% }) %>
+
+</div>

@@ -7,6 +7,9 @@ const passport = require('passport');
 const session = require('express-session');
 const { keywords } = require('./keys');
 const flash = require('connect-flash');
+const uuid = require('uuid');
+const { format } = require('timeago.js');
+
 
 //Configuracion del servidor
 const config = require('./server/config');
@@ -18,6 +21,26 @@ require('./passport/auth');
 
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
+
+const storage  = multer.diskStorage({
+    destination: path.join(__dirname, 'public/images/uploads'),
+    filename: (req, file, cb, filename) => {
+        cb(null, uuid.v4() + path.extname(file.originalname));
+    }
+});
+
+app.use(multer({
+    storage: storage
+}).single('image'));
+
+
+//Variables globales
+app.use((req,res,next) => {
+    app.locals.format = format;
+    next();
+});
+
+
 app.engine('ejs',engine);
 app.use(session({
     secret: keywords.secret,
@@ -51,4 +74,3 @@ app.listen(app.get('port'), () => {
 app.use(function (req, res) {
     res.status(404).render('error');
 });
-

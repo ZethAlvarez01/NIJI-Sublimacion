@@ -5,8 +5,8 @@ const passport = require('passport');
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-    user: String,
-    password: String
+    user: { type: String },
+    password: {type: String}
 });
 
 userSchema.methods.encryptPassword = (password) => {
