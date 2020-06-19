@@ -1,0 +1,111 @@
+.menu{
+    height: 60px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+}
+
+.title{
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 26px;
+    margin-top: 8px;
+}
+
+a{
+    background: white;  
+}
+
+.menu_right a{
+    position: relative;
+    display: inline-flex;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-right: 20px;
+    padding: 10px 20px;
+}
+
+.menu_right a:hover{
+    transition: 0.3s;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.carrito{
+    font-size: 30px !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #a0a0a0 !important;
+}
+
+.carrito:hover{
+    background: #a0a0a0;
+    color: white !important;
+}
+
+#color_blue,#color_green,#color_red{
+    position: absolute;
+    display: block;
+    margin-left: 10px;
+    bottom: 0px;
+    left: -100%;
+    width: 80%;
+    height: 2px;
+}
+
+a:hover #color_red{
+    left: 100%;
+    transition: 0.7s;
+}
+
+a:hover #color_blue{
+    left: 100%;
+    transition: 0.7s;
+}
+
+a:hover #color_green{
+    left: 100%;
+    transition: 0.7s;
+}
+
+#color_red{
+    background: linear-gradient(90deg, transparent, #fe0000);
+}
+
+#color_blue{
+    background: linear-gradient(90deg, transparent, #20d2f4);
+}
+
+#color_green{
+    background: linear-gradient(90deg, transparent, #0bff01);
+}
+
+.carrito_div{
+    display: inline-flex;
+}
+
+.badge {
+    font-size: 14px;
+    font-weight: 900;
+    position: relative;
+    right: 44px;
+    top: -2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgb(245, 0, 0);
+    color: white;
+    z-index: 100;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  }
