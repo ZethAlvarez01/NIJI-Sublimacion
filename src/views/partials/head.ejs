@@ -1,31 +1,59 @@
 <link href="/css/menu.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Balthazar&display=swap" rel="stylesheet">
 
 <div class="color">
 
 </div>
 <div class="container pegajoso">
+
+    <nav class="menu_h">
+
+        <div class="header_h">
+            <div class="icon" onclick="desplegar()">
+                <div class="hamburger">
+                </div>
+            </div>
+
+            <a href="#" class="title no-seleccionable" style="font-family: 'Balthazar', serif;">niji sublimaci&oacuten</a>
+
+            <div class="carrito_div2">
+                <a href="#" class="fa fa-shopping-cart carrito_h"></a>
+                <span class="badge_h" id="noti">2</span>
+            </div>
+        </div> 
+
+        <div class="fondo" id="fondoF" onclick="desplegar()"></div>
+
+        <div class="menu_oc no-seleccionable" id="menuh">
+            <a href="#" style="font-family: 'Roboto', sans-serif;" class="a1">Personaliza tu taza</a>
+            <a href="#" style="font-family: 'Roboto', sans-serif;" class="a2">Productos</a>
+        </div>
+
+        
+            
+    </nav>
+
     <nav class="menu">
         <a href="#" class="title no-seleccionable">niji sublimaci&oacuten</a>
         <div class="menu_right no-seleccionable">
-            <a href="#"><span id="color_green"></span>Personaliza tu taza</a>
-            <a href="#"><span id="color_blue"></span>Productos</a>
+            <a href="#" style="font-family: 'Roboto', sans-serif;" class="element"><span id="color_green"></span>Personaliza tu taza</a>
+            <a href="#" style="font-family: 'Roboto', sans-serif;" class="element"><span id="color_blue"></span>Productos</a>
             <div class="carrito_div">
                 <a href="#" class="fa fa-shopping-cart carrito"></a>
                 <span class="badge" id="noti">2</span>
             </div>
-        
-            <script>
-                notification();
-            </script>
         </div>
     </nav>
+
+    
 </div>
 
+        
+<script>
+    notification();
+</script>
 
-
-
-</div>
 
 
 
