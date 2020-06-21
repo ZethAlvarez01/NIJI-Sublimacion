@@ -13,7 +13,6 @@ footer{
     position: relative;
     display: flex;
     margin-top: 50px;
-    z-index: -1;
 }
 
 .lista-li{
@@ -24,6 +23,25 @@ footer{
     margin: 0px 5vw;
     transform: rotate(-30deg) skew(20deg);
     background: #ccc;
+}
+
+.aparecer:nth-child(1) span{
+    background: white;
+    transition: 0.5s;
+}
+
+.aparecer:nth-child(2) span{
+    background: white;
+    transition: 0.5s;
+}
+
+.aparecer:nth-child(3) span{
+    background: #9a8128;
+    transition: 0.5s;
+}
+
+.indice{
+    z-index: -1;
 }
 
 .lista-li span{
@@ -66,15 +84,16 @@ footer{
     opacity: 0.3;
 }
 
-.lista-li:nth-child(1) span{
+.lista-li-color:nth-child(1) span{
     background: #3b5999;
+    transition: 0.5s;
 }
 
-.lista-li:nth-child(2) span{
+.lista-li-color:nth-child(2) span{
     background: #25D366;
 }
 
-.lista-li:nth-child(3) span{
+.lista-li-color:nth-child(3) span{
     background: #dd4b39;
 }
 
