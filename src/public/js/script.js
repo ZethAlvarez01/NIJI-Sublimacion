@@ -6,6 +6,7 @@ function desplegar(){
     let face = document.getElementById("face-li");
     let what = document.getElementById("what");
     let goo = document.getElementById("google");
+    let icon = document.getElementById("icon");
     
     if(menu.classList.contains("active")){
         face.classList.remove("aparecer");
@@ -22,6 +23,8 @@ function desplegar(){
 
         menu.classList.remove("active");
         menuf.classList.remove("activef");
+
+        icon.classList.remove("active");
         
         
     }else{
@@ -39,6 +42,8 @@ function desplegar(){
 
         menu.classList.add("active");
         menuf.classList.add("activef");
+
+        icon.classList.add("active");
         
     }
 

@@ -31,7 +31,8 @@
     margin-left: 5px;
     font-weight: bold;
     font-size: 26px;
-    padding-left: 5px;
+    padding-left: 80px;
+
 }
 
 a{
@@ -148,11 +149,58 @@ a:hover #color_green{
   }
 
  .icon{
-     width: 35px;
-     height: 35px;
-     background: blueviolet;
-     margin-left: 20px;
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+    position: absolute;
+    cursor: pointer;
+    -webkit-tap-highlight-color: black;
+    -webkit-tap-highlight-color: transparent;
  }
+
+ .hamburger {
+    width: 35px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-51.5%, -50%);
+    transition: 0.5s;
+    z-index: 1000;
+}
+
+.hamburger:before,
+    .hamburger:after {
+        content: '';
+        width: 35px;
+        height: 2px;
+        background: black;
+        position: absolute;
+        transition: 0.5s;
+    }
+    
+    .hamburger:before {
+        top: -14px;
+    }
+    
+    .hamburger:after {
+        top: 14px;
+    }
+    
+    .icon.active .hamburger {
+        background: white;
+    }
+    
+    .icon.active .hamburger:before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    
+    .icon.active .hamburger:after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
 
  .carrito_h{
     padding: 10px;
@@ -260,10 +308,10 @@ a:hover #color_green{
      
 }
 
-@media (max-width: 365px){
+@media (max-width: 382px){
 
     .title{
-        padding-left: 40px;
+        padding-left: 100px;
         text-align: left;
     }
 }
